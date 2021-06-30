@@ -1,0 +1,594 @@
+@import "../nodebb-theme-slick/theme";
+
+
+@bg: #332f35;
+@red: #e3474a;
+
+
+
+body {
+    color: lighten(@bg, 40%);
+    font-family: 'Open Sans', "Segoe UI", Tahoma, sans-serif;
+    font-size: 16px;
+    //padding-top: 90px;
+}
+
+body, .navbar-default, .topic-list-header, .topic .topic-header {
+    background-color: @bg;
+}    
+   
+.navbar-fixed-top {
+    border-width: 0;
+}
+ 
+.forum-logo {
+    
+    image-rendering: crisp-edges;
+    image-rendering: pixelated;
+}
+
+.text-muted {
+    color: lighten(@bg, 15%);
+}
+
+//titles
+.posts-list .posts-list-item .topic-title, 
+.categories .category-info .category-info-content .category-title,
+.category [component="category/topic"] .title a,
+.account .posts-list .posts-list-item .post-body .topic-title {
+    color: lighten(@bg, 60%);
+}
+
+//HRs on profile page posts
+.account .posts-list .posts-list-item {
+    border-bottom: solid 2px darken(@bg, 3%);
+    padding-bottom: 2em;
+    margin-bottom: 2em;
+}
+
+//category headers
+.category-header-title, .widget-board-stats h3, .category h4 {
+    background-color:  lighten(@bg, 5%); 
+    color:  lighten(@bg, 45%); 
+    font-size: 1.2em;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 0.5em 0.75em;
+}
+.categories, .category { .categories-header, .topics-header {
+    //background-color: lighten(@bg, 5%); 
+    padding-top: 0;
+    
+    .header-title { 
+        border: none;
+        margin-top: 0;
+        padding: 1.2em 0;
+    }
+}}
+.categories .teaser .post-preview a.permalink {
+    font-weight: bold;
+        color: lighten(@bg, 60%);
+}
+
+
+.account .profile .profile-meta strong {
+    color: lighten(@bg, 40%);
+}
+
+.topic-list-header {
+    border-width: 0;
+}
+
+.alert-warning {
+    background: none;
+    border: none;
+    color: lighten(@bg, 50%);
+}
+//get rid of blue
+.categories .category-info .category-info-content .category-icon{
+    color: lighten(@bg, 20%);
+}
+
+.btn-primary {
+    background-color: @red;
+    border: none;
+    
+    &:hover, &:active {
+        background-color: lighten(@red, 7%);
+    }
+}
+
+.category [component="category/topic"].unread .title a {
+    color: lighten(@bg, 50%);
+}
+
+//links
+a, .navbar-nav > li > a {
+
+  
+  &:not(.btn) {
+        color: lighten(@bg, 100%);
+      border-bottom: dotted 1px transparent;
+        &:hover, &:focus {
+        color: lighten(@bg, 100%);
+        :not(.teaserf) {}
+            border-bottom: dotted 1px lighten(@bg, 50%);
+        
+      }
+  }
+
+  
+}
+
+
+//links on profile page
+.account .posts-list .posts-list-item .post-body .topic-category > a, .account .posts-list .posts-list-item .post-body .timeago {
+    color: lighten(@bg, 30%);
+}
+
+//thread 
+.topic {
+    
+    div[component="post"] {
+        color: lighten(@bg, 45%);
+        background-color: lighten(@bg, 5%);
+        padding: 1em;
+        border-bottom: solid 4px darken(@bg, 5%);
+        position: relative; //so the footer can be absolute
+        
+        &.highlight {
+            background-color: lighten(@bg, 10%);
+            border-bottom: solid 4px darken(@bg, 5%);
+        }
+        
+        //AVATAR
+        .post .post-author {
+            padding-bottom: 0;
+        }
+        
+        .postcount {
+            font-size: 0.7em;
+            font-weight: bold;
+            color: lighten(@bg, 30%)
+        }
+        
+        .post-tools a {
+            color: lighten(@bg, 30%);
+            &:hover, &:active {
+                color: lighten(@bg, 100%);
+            }
+        }
+        
+        //HEADER (date)
+        .post-header {
+            padding-top: 0;
+            margin-bottom: 1em;
+            .post-time {
+            color: lighten(@bg, 30%);
+            }
+        }
+    
+        //SIGNATURE
+        .post .post-signature {
+            border-top: solid 2px lighten(@bg, 2%);
+            color: lighten(@bg, 20%);
+            max-height: 64px;
+            margin: 0;
+            
+            img {
+            	opacity: 0.25;
+            	filter: grayscale(100%);
+            	mix-blend-mode: screen;
+            	max-height: 64px;
+                overflow: hidden;
+                box-sizing: content-box;
+                display: inline;
+            }   
+            
+            &:hover {
+                color: lighten(@bg, 40%);
+                
+                img {
+                    opacity: 1;
+            		filter:  grayscale(0%);
+            		mix-blend-mode: normal;
+                }
+            }
+        }
+        
+                
+        //FOOTER
+        .post-footer {
+            position: absolute;
+            right: 1em;
+            bottom: -1em;
+            //background-color: lighten(@bg, 5%);
+            opacity: 0;
+            transition: opacity 200ms, bottom 200ms;
+            
+            .moderator-tools > a {
+                color: lighten(@bg, 30%);
+            }
+            
+            .col-xs-12 {padding: 0}
+            a {border: none}
+        }
+        &:hover .post-footer{
+            bottom: 1em;
+            opacity: 1;
+        }
+    }
+    
+    //bar with tags, stats, reply button, etc
+    .post-bar {
+        
+        .tags {
+            a {
+                background-color:  lighten(@bg, 8%);
+                color:  lighten(@bg, 30%);
+                border: none !important;
+                padding:0.5em;
+                font-size: 0.8em;
+                font-weight: bold;
+                &:hover {
+                    background-color:  lighten(@bg, 15%);
+                    color:  lighten(@bg, 40%);
+                }
+                .tag-item {padding: 0}
+                .tag-item::before {content:"#"}
+            }
+        }
+    }
+
+}
+.breadcrumb > .active {
+    color: lighten(@bg, 30%);
+}
+
+.topic .quick-reply {
+    display: none;
+}
+.topic .pagination-block {
+    font-size: 0.75em;
+    background-color: darken(@bg, 4%);
+    .pagination-text { color: lighten(@bg, 30%); }
+    .progress-bar {
+        background-color: darken(@bg, 8%);
+    }
+    i {
+        color: lighten(@bg, 10%);
+        &:hover {
+            color: lighten(@bg, 40%);
+        }
+    }
+}
+
+
+//textarea
+.form-control {
+    background-color: darken(@bg, 5%);
+    border: none;
+    color: lighten(@bg, 20%);
+}
+
+.account .account-picture-block .list-group .list-group-item {
+    background: lighten(@bg, 10%);
+    border: none;
+    color: lighten(@bg, 50%);
+    margin: 0.5em 0;
+    border-radius: 0.5em;
+    &:hover {
+        background: lighten(@bg, 15%);
+        color: lighten(@bg, 70%);
+    }
+}
+
+.nav > li > a:focus, .nav > li > a:hover { 
+    background:  lighten(@bg, 10%);
+    border: none;
+}
+
+//AVATARS - not round, not blurry
+.user-icon, .user-avatar, .avatar.avatar-rounded {
+    border-radius: 0 !important;    
+    image-rendering: crisp-edges; // for firefox
+    image-rendering: pixelated; // for everyone else
+}
+.topic .post .post-author .user-avatar {
+    filter: drop-shadow(0 2px 0 darken(@bg, 2%));
+    width: 128px;
+    height: 128px;
+}
+
+//buttons 
+.btn-default {
+    background-color: lighten(@bg, 20%);
+    color: lighten(@bg, 50%);
+    border: none;
+    &:hover {
+        background-color: lighten(@bg, 30%);
+        color: lighten(@bg, 60%);
+    }
+}
+
+//panel 
+.panel {
+    background-color: @bg;
+    border: none;
+    box-shadow: none;
+    .panel-heading, .panel-body {
+        background-color: @bg;
+        border: none;
+        color: lighten(@bg, 30%);
+        
+    }
+}
+
+//header things
+.navbar-default {
+    padding: 0.5em 0;
+    
+    .navbar-nav > li > a, #search-button, #main-nav .active > a {
+        color: lighten(@bg, 30%);
+        
+        &:hover {
+            color: lighten(@bg, 60%);
+        }
+    }
+    #main-nav li > a {
+        border-bottom: none;
+    }
+}
+
+
+//tooltips like on the headers 
+.tooltip {
+    @tooltipcolor: lighten(@bg, 20%);;
+    .tooltip-inner {
+        background-color: @tooltipcolor;
+        font-size: 1.2em;
+        padding: 0.5em 0.75em;
+        
+    }
+    &.bottom .tooltip-arrow {border-bottom-color: @tooltipcolor}
+    &.top .tooltip-arrow {border-top-color: @tooltipcolor}
+    &.left .tooltip-arrow {border-left-color: @tooltipcolor}
+    &.right .tooltip-arrow {border-right-color: @tooltipcolor}
+    
+    .fade {
+        transition: none;
+    }
+}
+
+hr {
+    border: none
+}
+
+//annoying blue bar at top of screen
+.load-bar {
+    display: none;
+}
+
+
+
+//editor
+html.composing .composer {
+    background: lighten(@bg, 10%);
+    
+    &.resizable{padding-top: 15px;}
+    
+    //resizer
+    .resizer .trigger i {
+        background: lighten(@bg, 10%);
+        color:  lighten(@bg, 40%);
+        border: none;
+    }
+    
+    //title of thread, replying to
+    .form-control {
+        background: none;
+        color: lighten(@bg, 40%)
+    }
+    .title-container .title {
+        padding: 0;
+    }
+    
+    //icons
+    .formatting-bar .formatting-group li {
+        color:  lighten(@bg, 40%);
+        &:hover {
+            color:  lighten(@bg, 50%);
+            background-color:  lighten(@bg, 15%);
+        }
+    }
+    
+    //textarea
+    .write, .preview {
+        background: darken(@bg, 0%);
+        border: none;
+        color:  lighten(@bg, 40%);
+    }
+    
+    .tags-container .bootstrap-tagsinput { 
+        background: darken(@bg, 0%);
+        color:  lighten(@bg, 40%);
+        
+        input {
+            background: darken(@bg, 0%);
+            color:  lighten(@bg, 40%);
+            padding: 0.125em 1em;
+        }
+        
+        .label-info {
+            background: lighten(@bg, 5%);
+        }
+    }
+    
+    //mobile / iframe editor
+    .mobile-navbar {
+        background: none;    
+        color: lighten(@bg, 30%);
+        
+        .composer-discard, .composer-minimize {
+            background: none;
+            color: lighten(@bg, 30%);
+            &:hover {
+                background:  lighten(@bg, 10%);
+                color: lighten(@bg, 40%);
+            }
+        }
+    }
+    
+    @media (max-width:991px) {
+        background: @bg !important;
+        
+        .composer-submit { //submit post button
+            &::before {
+                content: "submit";
+            }
+            
+            i {margin-left: 0.5em}
+        }
+        
+        .title-container {
+            border: none;
+            .title {
+                background: darken(@bg, 5%);
+                padding: 0.25em 0.5em;
+                margin: 0.5em 0;
+            }
+        }
+        
+        .write { //textarea
+            background: darken(@bg, 5%);
+            border-radius: 0.5em;
+        }
+        .write-preview-container {max-height: 500px}
+    }
+    
+}
+
+
+//dropdown menu, notifications
+.dropdown-menu {
+    background-color:  darken(@bg, 3%);
+    &> li > a {
+        color:   lighten(@bg, 25%);
+        &:hover {
+            color:   lighten(@bg, 40%);
+            background-color:  darken(@bg, 1%);
+        }
+    }
+}
+
+.notifications.dropdown .dropdown-menu {
+    .notification-list li {
+        .notification-msg a { color: lighten(@bg, 50%);}
+        &.unread {background-color:  darken(@bg, 0%);}
+        
+    }
+    .mark-all-read {color:   lighten(@bg, 30%); border: none}
+}
+
+.bar {
+    display: none;
+}
+
+.emoji-customizations, .emoji-link > img, .emoji-link > span {
+    height: 32px;
+    image-rendering: crisp-edges;
+    font-size: 32px;
+    line-height: 32px;
+}
+
+
+
+body.iframed {
+    #header-menu {
+        .navbar-header, #main-nav {display: none}
+    }
+    
+    #content {
+        margin: 0;
+        padding: 0;
+    }
+    
+    @media (min-width:768px) {
+        .container {
+            width: 100%;
+        }
+    }
+    
+
+}
+
+//fix hidden sidebar since lospec is slightly too skinny
+@media (min-width:768px) and (max-width:991px) {
+    .hidden-sm {
+        &.col-md-1, &.col-md-2 {display:block!important; float: left}
+    }
+    
+    .col-xs-12 {width: 600px;}
+}
+
+//sign in  / register links
+#logged-out-menu {
+    //hide links
+    &> li > a { display: none; }
+    //add text
+    &>li:first-child::before {
+        display: inline-block;
+        content: "Login to Lospec to access the forum!";
+        padding: 20px 10px;
+        line-height: 20px;
+    }
+}
+
+a[component="category/post/guest"], a[component="topic/reply/guest"] {
+    display: none;
+}
+
+
+//mobile menu
+nav#menu {
+    background: darken(@bg, 4%);
+    background-image: none;
+    z-index: 9999 !important;
+    padding-top: 0;
+    
+    .menu-profile {
+        //background: none;
+        display: none
+    }
+    .menu-section-title {
+        color: lighten(@bg, 30%);
+        font-weight: bold;
+    }
+    
+    li a[href="/login"], li a[href="/register"], li[component="user/logout"] {
+        display:none;
+    }
+}
+.navbar-default .navbar-toggle {
+    .icon-bar {background-color: lighten(@bg, 30%)}
+    
+    &:focus, &:hover {
+        background: lighten(@bg, 20%);
+        .icon-bar {background-color: lighten(@bg, 50%)}
+    }
+
+}
+
+
+.deleted {display: none}
+
+
+//homepage footer
+.col-xs-12[data-widget-area="footer"] {
+    width: 100%;
+    @media (min-width:768px) {
+  
+            width: 100%;
+        
+    }
+}

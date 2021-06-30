@@ -1,0 +1,6 @@
+{
+    "id": "nodebb-theme-lospec",
+    "name": "Lospec Forums",
+    "description": "Theme created for the Lospec forums",
+    "baseTheme": "nodebb-theme-slick"
+}

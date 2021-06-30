@@ -1,0 +1,6 @@
+{
+    "id": "nodebb-theme-quickstart",
+    "name": "My Theme Name",
+    "description": "Enter a description here",
+    "baseTheme": "nodebb-theme-slick"
+}

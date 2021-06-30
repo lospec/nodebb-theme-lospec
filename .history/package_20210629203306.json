@@ -1,0 +1,28 @@
+{
+	"name": "nodebb-theme-lospec",
+	"version": "1.0.0",
+	"nbbpm": {
+		"compatibility": "^1.17.0"
+	},
+	"description": "Theme created for the Lospec forums",
+	"main": "theme.less",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/lospec/nodebb-theme-lospec.git"
+	},
+	"keywords": [
+		"nodebb",
+		"lospec",
+		"theme",
+		"themes"
+	  ],
+	"author": {
+		"name": "Lospec",
+		"email": "email is dead",
+		"url": "https://Lospec.com"
+	},
+
+	"bugs": {
+		"url": "https://lospec.com/forums/topic/49/suggestions-bug-reports-and-feature-requests"
+	}
+}
