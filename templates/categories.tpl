@@ -1,3 +1,9 @@
+<div data-widget-area="header">
+	{{{each widgets.header}}}
+	{{widgets.header.html}}
+	{{{end}}}
+</div>
+
 <div class="categories" itemscope itemtype="http://www.schema.org/ItemList">
     <div class="row categories-header hidden-xs hidden-sm">
         <div class="col-md-8 col-xs-12"><div class="header-title">[[category:category]]</div></div>

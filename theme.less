@@ -592,3 +592,56 @@ nav#menu {
         
     }
 }
+
+
+//homepage recent posts plugin
+
+.recent-cards {
+    //hide this plugin because it's broken until we fix the mobile view
+    display: none;
+        
+    &>li {
+        padding-left: 0.25em;
+        padding-right: 0.25em;
+    }
+    .recent-card-container .recent-card {
+        border: none;
+        background: darken(@bg, 4%);
+        color: lighten(@bg, 20%);
+        
+        a {
+            color: lighten(@bg, 35%);
+        }
+        
+        //title
+        h4 {
+            font-weight: bold;
+            color: lighten(@bg, 40%);
+        }
+        
+        //make text smaller
+        .topic-info p {font-size: 0.8em;}
+        
+        .footer {
+            
+            //category link
+            .category-item {
+                color: lighten(@bg, 20%) !important;
+                font-weight: bold;
+                
+                a {color: lighten(@bg, 20%) !important}
+                
+                .icon { 
+                    background-color: transparent !important;
+                    color: lighten(@bg, 20%) !important;
+                    margin-right: 0;
+                }
+            }
+            
+            .timeago {
+                width: auto !important;
+                color: lighten(@bg, 10%);
+            }
+        }
+    }
+}

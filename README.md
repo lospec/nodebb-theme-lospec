@@ -20,5 +20,8 @@ It uses slick as the base theme: https://github.com/pichalite/nodebb-theme-slick
 
 To make changes to HTML, you must modify the `.tpl` files in the templates folder. If a file does not exist, you must first copy it from the slick theme. If it doesn't exist on the slick theme, it inherits it from Persona (I think)
 
+CSS can be edited in `theme.less`.
+
+To add a widget section you need to add HTML into a template (see categories.tpl), then add it to the list of defined widget areas in lib/theme.js.
 
 
