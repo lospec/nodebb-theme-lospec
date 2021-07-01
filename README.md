@@ -22,6 +22,8 @@ To make changes to HTML, you must modify the `.tpl` files in the templates folde
 
 CSS can be edited in `theme.less`.
 
+You will definitely want to install grunt (`npm install grunt -g`), then run `grunt` in the nodebb folder, this will watch your files for changes and recompile them.
+
 To add a widget section you need to add HTML into a template (see categories.tpl), then add it to the list of defined widget areas in lib/theme.js.
 
 
